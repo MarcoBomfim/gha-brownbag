@@ -1,5 +1,9 @@
 name: 'Random Number Sync'
 description: 'Generates a random number after waiting for remote repo workflow to finish'
+inputs:
+  token:
+    description: 'A Github PAT'
+    required: true
 outputs:
   random-number:
     description: 'Random number'
@@ -10,7 +14,7 @@ runs:
     - name: Trigger remote workflow and wait for result
       uses: convictional/trigger-workflow-and-wait@v1.6.5
       with:
-        github_token: ${{ secrets.MARCO_PAT }}
+        github_token: ${{ inputs.token }}
         owner: MarcoBomfim
         repo: gha-brownbag-remote
         ref: main

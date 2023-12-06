@@ -9,6 +9,6 @@ jobs:
       - id: foo
         uses: MarcoBomfim/gha-brownbag/sync@main
         with:
-          who-to-greet: 'Mona the Octocat'
+          token: ${{ secrets.MARCO_PAT }}
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
         shell: bash
