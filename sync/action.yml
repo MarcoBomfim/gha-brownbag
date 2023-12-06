@@ -16,7 +16,7 @@ runs:
       with:
         github_token: ${{ inputs.token }}
         owner: MarcoBomfim
-        repo: gha-brownbag-remote
+        repo: gh-brownbag-remote
         ref: main
         workflow_file_name: sync.yml
         wait_interval: 5
