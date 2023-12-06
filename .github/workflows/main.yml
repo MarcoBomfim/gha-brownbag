@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - id: foo
-        uses: MarcoBomfim/gha-brownbag/sync@main
+        uses: MarcoBomfim/gha-brownbag/async@main
         with:
           token: ${{ secrets.MARCO_PAT }}
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
