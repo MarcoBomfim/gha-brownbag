@@ -10,7 +10,7 @@ runs:
     - name: Trigger remote workflow and wait for result
       uses: convictional/trigger-workflow-and-wait@v1.6.5
       with:
-        # github_token: ${{ secrets.E2E_PAT }}
+        github_token: ${{ secrets.MARCO_PAT }}
         owner: MarcoBomfim
         repo: gha-brownbag-remote
         ref: main
