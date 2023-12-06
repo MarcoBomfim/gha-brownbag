@@ -1,0 +1,25 @@
+name: 'Random Number Async'
+description: 'Generates a random number after waiting for remote repo workflow to finish'
+inputs:
+  token:
+    description: 'A Github PAT'
+    required: true
+outputs:
+  random-number:
+    description: 'Random number'
+    value: ${{ steps.random-number-generator.outputs.random-number }}
+runs:
+  using: 'composite'
+  steps:
+    - name: Trigger remote workflow and wait for result
+      uses: convictional/trigger-workflow-and-wait@v1.6.5
+      with:
+        github_token: ${{ inputs.token }}
+        owner: MarcoBomfim
+        repo: gh-brownbag-remote
+        ref: main
+        workflow_file_name: async.yml
+        trigger_workflow: true
+        wait_workflow: false
+    - run: ./goodbye.sh
+      shell: bash

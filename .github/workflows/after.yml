@@ -1,0 +1,10 @@
+on:
+  workflow_dispatch:
+
+jobs:
+  after_all:
+    runs-on: ubuntu-latest
+    name: A job to run after everything
+    steps:
+      - run: echo thanks for watching!
+        shell: bash
