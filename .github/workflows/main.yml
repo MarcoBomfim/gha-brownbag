@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - id: foo
-        uses: MarcoBomfim/gha-brownbag/greet@main
+        uses: MarcoBomfim/gha-brownbag/sync@main
         with:
           who-to-greet: 'Mona the Octocat'
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
