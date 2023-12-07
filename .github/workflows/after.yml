@@ -6,5 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to run after everything
     steps:
+      - name: Sleep for 15 seconds
+        run: sleep 15s
+        shell: bash
       - run: echo thanks for watching!
         shell: bash
